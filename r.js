@@ -1,12 +1,10 @@
 // script.js 
 
+let details = []
+
 function solve() { 
 	let password = 
 		document.getElementById('password').value; 
-	// let repassword = 
-	// 	document.getElementById('repassword').value; 
-	// let mobile = 
-	// 	document.getElementById('mobile').value; 
 	let branch = document.getElementById('branch').value;
 	let mail = 
 		document.getElementById('email').value; 
@@ -22,15 +20,6 @@ function solve() {
 		}, 3000); 
 	} 
 
-	// if (password !== repassword) { 
-	// 	flag = 0; 
-	// 	pass.innerText = 
-	// 		"Passwords do not match. Please re-enter."; 
-	// 	setTimeout(() => { 
-	// 		pass.innerText = ""; 
-	// 	}, 3000); 
-	// } 
-
 	let passwordRegex = 
 		/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$/; 
 
@@ -44,6 +33,38 @@ function solve() {
 			pass.innerText = ""; 
 		}, 3000); 
 	} 
-	if (flag) 
+	if (flag) {
 		alert("Form submitted"); 
+		let detail={
+			first:first,
+			email:mail
+		};
+	
+		details.push(detail);
+		alert(JSON.stringify(details));
+	}
+	
 }
+
+function fetch()
+{
+	let email = document.getElementById('mail').value;
+	let detail = null;
+	for( let i=0;i<details.length;i++)
+	{
+		if(details[i]['email']===email){
+			detail = details[i];
+			break;
+		}
+	}
+	if(detail){
+		alert("Hurray !");
+	}
+	else{
+		alert("Ohh wrong !");
+	}
+
+}
+
+
+
