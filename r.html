@@ -11,7 +11,7 @@
 <body> 
 	<div class="main"> 
 		<h1 style="color:rgb(37, 37, 107)">Registration Form</h1> 
-		<form action=""> 
+		<form action="" onsubmit="solve(); return false"> 
 			<label for="first">First Name:</label> 
 			<input type="text" id="first"
 				name="first"
@@ -42,11 +42,6 @@
 					one alphabet, one symbol, and be at 
 					least 8 characters long"> 
 
-			<!-- <label for="repassword">Re-type Password:</label> 
-			<input type="password" id="repassword"
-				name="repassword"
-				placeholder="Re-Enter your password" required> 
-			<span id="pass"></span>  -->
 
 			<label for="course">Course</label> 
 			<input type="text" id="course"
@@ -66,9 +61,17 @@
 				Submit 
 				</button> 
 			</div> 
+			<div class="wrap">
+				<input type="text" id ="mail" placeholder="Enter your email">
+				<button type="button" onclick="fetch()">Get</button>
+
+			</div>
+
 		</form> 
 	</div> 
 	<script src="r.js"></script> 
+	
+	
 </body> 
 
 </html>
