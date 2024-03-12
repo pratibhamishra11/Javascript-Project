@@ -11,7 +11,7 @@
 <body> 
 	<div class="main"> 
 		<h1 style="color:rgb(37, 37, 107)">Registration Form</h1> 
-		<form action=""> 
+		<form action="" onsubmit="solve(); return false"> 
 			<label for="first">First Name:</label> 
 			<input type="text" id="first"
 				name="first"
@@ -61,20 +61,16 @@
 				Submit 
 				</button> 
 			</div> 
-			<div onsubmit="submitForm(event)">
-			<input name="searchterm"/>
-			<button>Get</button></div>
+			<div class="wrap">
+				<input type="text" id ="mail" placeholder="Enter your email">
+				<button type="button" onclick="fetch()">Get</button>
+
+			</div>
 
 		</form> 
 	</div> 
 	<script src="r.js"></script> 
 	
-	<script>
-		function submitForm(event) {
-		  alert(event.target.elements.searchTerm.value)
-		  return false;
-		}
-	  </script>
 	
 </body> 
 

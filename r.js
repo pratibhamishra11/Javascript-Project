@@ -1,5 +1,7 @@
 // script.js 
 
+let details = []
+
 function solve() { 
 	let password = 
 		document.getElementById('password').value; 
@@ -31,8 +33,37 @@ function solve() {
 			pass.innerText = ""; 
 		}, 3000); 
 	} 
-	if (flag) 
+	if (flag) {
 		alert("Form submitted"); 
+		let detail={
+			first:first,
+			email:mail
+		};
+	
+		details.push(detail);
+		alert(JSON.stringify(details));
+	}
+	
+}
+
+function fetch()
+{
+	let email = document.getElementById('mail').value;
+	let detail = null;
+	for( let i=0;i<details.length;i++)
+	{
+		if(details[i]['email']===email){
+			detail = details[i];
+			break;
+		}
+	}
+	if(detail){
+		alert("Hurray !");
+	}
+	else{
+		alert("Ohh wrong !");
+	}
+
 }
 
 
